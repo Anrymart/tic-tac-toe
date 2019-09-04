@@ -1,0 +1,131 @@
+body {
+    font: 16px 'Century Gothic', Futura, sans-serif;
+    margin: 20px;
+}
+
+.main {
+}
+
+.game-preview {
+    margin: 16px 0;
+}
+
+.game-name {
+    cursor: pointer;
+    padding: 8px 0;
+    font-weight: bold;
+    transition: ease-out 200ms;
+}
+
+.game-name:hover {
+    color: #C62828;
+}
+
+.game-info {
+    display: flex;
+    opacity: 0.6;
+}
+
+.game-info span {
+    padding-right: 24px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.popup {
+    padding: 30px 30px 10px;
+    background-color: white;
+}
+
+.popup-control {
+    display: flex;
+    justify-content: flex-end;
+    margin: 16px 0;
+}
+
+.popup-control input {
+    margin-left: 6px;
+}
+
+.game-container {
+    display: flex;
+    margin: 16px 0;
+}
+
+.game-field {
+    margin-right: 20px;
+}
+
+.game-row {
+    display: flex;
+}
+
+.game-cell {
+    width: 2em;
+    height: 2em;
+    border: 1px solid #ddd;
+    margin-right: -1px;
+    margin-bottom: -1px;
+    transition: ease 200ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: default;
+}
+
+.game-cell._empty:after {
+    transition: ease 200ms;
+    opacity: 0;
+}
+
+.game-cell._empty._cross:after {
+    content: "✖";
+}
+
+.game-cell._empty._zero:after {
+    content: "O";
+}
+
+.game-cell._empty:hover {
+    cursor: pointer;
+}
+
+.game-cell._empty:hover:after {
+    opacity: 0.5;
+}
+
+.game-cell._winning {
+    background-color: #F1F8E9;
+}
+
+.notification {
+    z-index: 1;
+    position: fixed;
+    padding: 20px;
+    background-color: #eeeeee;
+    border: 1px solid #dddddd;
+    right: 16px;
+    bottom: 0;
+    transform: translateY(100%);
+    cursor: pointer;
+    opacity: 0;
+    transition: all 200ms ease;
+}
+
+.notification._visible {
+    opacity: 1;
+    bottom: 16px;
+    transform: translateY(0);
+}
